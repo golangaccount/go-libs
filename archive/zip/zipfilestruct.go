@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"strings"
+	"time"
 
 	gftp "github.com/golangaccount/go-libs/net/ftp"
 )
@@ -13,6 +14,8 @@ import (
 type ZipFileStruct struct {
 	FilePath        string                              //需要压缩的文件地址
 	ZipPath         string                              //zip文件的地址
+	FileMode        os.FileMode                         //文件类型
+	ModTime         time.Time                           //
 	StreamTransform func(string) (io.ReadCloser, error) //转换读写流
 }
 
