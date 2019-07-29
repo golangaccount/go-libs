@@ -13,7 +13,7 @@ func Get(s interface{}, field string) (result interface{}, err error) {
 
 var regexp_key = regexp.MustCompile(`^".+"$`)
 var regexp_index = regexp.MustCompile(`"^[0-9]+$"`)
-var regepx_field = regexp.MustCompile(`^[A-Z][a-Z0-9-]{0,}$`)
+var regepx_field = regexp.MustCompile(`^[A-Z][a-z0-9-]{0,}$`)
 
 func get(value reflect.Value, field string) (result reflect.Value, err error) {
 	switch value.Kind() {
@@ -21,4 +21,5 @@ func get(value reflect.Value, field string) (result reflect.Value, err error) {
 	case reflect.Map:
 	case reflect.Struct:
 	}
+	return reflect.Value{}, nil
 }

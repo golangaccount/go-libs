@@ -23,6 +23,7 @@ func Create(path string) (*os.File, error) {
 		return nil, err
 	}
 	return os.Create(path)
+
 }
 
 //文件不存在则进行创建,文件存在则向文件中追加内容

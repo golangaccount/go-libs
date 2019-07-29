@@ -1,5 +1,0 @@
-package collection
-
-func Field() {
-
-}
