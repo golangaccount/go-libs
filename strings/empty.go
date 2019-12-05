@@ -25,3 +25,13 @@ func IsWhite(s string) bool {
 func IsEmptyOrWhite(s string) bool {
 	return IsEmpty(s) || IsWhite(s)
 }
+
+func RemoveEmpty(src []string) []string {
+	result := make([]string, 0)
+	for _, item := range src {
+		if !IsEmptyOrWhite(item) {
+			result = append(result, item)
+		}
+	}
+	return result
+}
